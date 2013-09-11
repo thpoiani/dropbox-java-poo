@@ -10,9 +10,12 @@ package dropbox;
  */
 public class FabricaGadgets extends FabricaDispositivos {
 
-    @Override
-    public Dispositivo getDispositivo(String tipoDisp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Dispositivo getDispositivo(String tipoDisp) throws Exception {
+    	switch (tipoDisp.toLowerCase()) {
+	        case "tablet": return new Tablet("path");
+	        case "smartphone": return new Smartphone("path");
+	        default: throw new Exception("A classe " + tipoDisp + " não existe.");
+	    }
     }
     
 }

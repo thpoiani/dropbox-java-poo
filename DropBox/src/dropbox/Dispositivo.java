@@ -16,13 +16,12 @@ public abstract class Dispositivo implements Observer{
     public String nome;
     public String caminhoPasta;
     
-    public void Dispositivo(String caminhoPasta) {
-        
+    public Dispositivo(String caminhoPasta) {
         
     }
     
-    public void sincronizaArquivo(String caminho) {
-        
+    
+	public void sincronizaArquivo(String caminho) {
         
     }
 

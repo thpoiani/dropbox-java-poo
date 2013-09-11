@@ -12,7 +12,11 @@ import java.util.Observable;
  */
 public class Smartphone extends Dispositivo {
 
-    public void update(Observable o, Object arg) {
+    public Smartphone(String caminhoPasta) {
+		super(caminhoPasta);
+	}
+
+	public void update(Observable o, Object arg) {
         
         
     }

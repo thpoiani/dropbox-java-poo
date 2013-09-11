@@ -14,10 +14,10 @@ public class Servidor extends Observable{
     
     private static Servidor uniServer;
     
-    public static synchronized Servidor getInstance() {
-        
-        if(uniServer == null)
+    public static synchronized Servidor getInstance() {        
+        if(uniServer == null) {
             uniServer = new Servidor();
+        }
         return uniServer;
     }
 }

@@ -12,7 +12,11 @@ import java.util.Observable;
  */
 public class PC extends Dispositivo {
 
-    public void update(Observable o, Object arg) {
+    public PC(String caminhoPasta) {
+		super(caminhoPasta);
+	}
+
+	public void update(Observable o, Object arg) {
         
         
     }

@@ -4,15 +4,19 @@
  */
 package dropbox;
 
+
 /**
  *
  * @author Jefferson
  */
 public class FabricaComputadores extends FabricaDispositivos {
 
-    @Override
-    public Dispositivo getDispositivo(String tipoDisp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Dispositivo getDispositivo(String tipoDisp) throws Exception {
+    	switch (tipoDisp.toLowerCase()) {
+        	case "notebook": return new Notebook("path");
+	        case "pc": return new PC("path");
+	        default: throw new Exception("A classe " + tipoDisp + " não existe.");
+	    }
     }
     
 }
