@@ -9,5 +9,10 @@ package dropbox;
  * @author Jefferson
  */
 public class FabricaComputadores extends FabricaDispositivos {
+
+    @Override
+    public Dispositivo getDispositivo(String tipoDisp) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

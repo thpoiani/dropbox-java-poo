@@ -11,17 +11,17 @@ import java.util.logging.Logger;
  *
  * @author Jefferson
  */
-public class FabricaDispositivos {
+public abstract class FabricaDispositivos {
     
     Dispositivo dispositivo = null;
     
     public Dispositivo criarDispositivo(String tipoDisp) {
         
         switch (tipoDisp.toLowerCase()) {
-            case "Notebook": dispositivo = new Notebook();
-            case "PC": dispositivo = new PC();
-            case "Tablet": dispositivo = new Tablet();
-            case "Smartphone": dispositivo = new Smartphone();
+            case "notebook": dispositivo = new Notebook();
+            case "pc": dispositivo = new PC();
+            case "tablet": dispositivo = new Tablet();
+            case "smartphone": dispositivo = new Smartphone();
             default: try {
                         throw new Exception();
                      } catch (Exception ex) {
@@ -32,8 +32,5 @@ public class FabricaDispositivos {
         return dispositivo;
     }
     
-    public Dispositivo getDispositivo(String tipoDisp) {
-        
-        return dispositivo;
-    }
+    public abstract Dispositivo getDispositivo(String tipoDisp);
 }
