@@ -11,7 +11,7 @@ import java.util.Observer;
  *
  * @author Jefferson
  */
-public class Dispositivo implements Observer{
+public abstract class Dispositivo implements Observer{
     
     public String nome;
     public String caminhoPasta;
@@ -27,7 +27,5 @@ public class Dispositivo implements Observer{
     }
 
     @Override
-    public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public abstract void update(Observable o, Object arg);
 }
