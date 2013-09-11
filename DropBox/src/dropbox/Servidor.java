@@ -12,8 +12,12 @@ import java.util.Observable;
  */
 public class Servidor extends Observable{
     
-    public Servidor getInstance() {
+    private static Servidor uniServer;
+    
+    public static synchronized Servidor getInstance() {
         
-        return null;
+        if(uniServer == null)
+            uniServer = new Servidor();
+        return uniServer;
     }
 }

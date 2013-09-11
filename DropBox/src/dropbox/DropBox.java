@@ -14,6 +14,7 @@ public class DropBox {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Servidor.getInstance(); //Pega a instância do servidor, vai faltar os metodos de cadastros dos dispositvos
     }
 }
