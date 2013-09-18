@@ -11,6 +11,6 @@ package dropbox;
  */
 public abstract class FabricaDispositivos {
         
-    public abstract Dispositivo getDispositivo(String tipoDisp) throws Exception;
+    public abstract Dispositivo getDispositivo(String tipoDisp, String path) throws Exception;
     
 }

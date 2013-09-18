@@ -12,13 +12,12 @@ import java.util.Observable;
  */
 public class PC extends Dispositivo {
 
-    public PC(String caminhoPasta) {
-		super(caminhoPasta);
+    public PC(String path) {
+		super(path);
 	}
 
-	public void update(Observable o, Object arg) {
-        
-        
+    public void update(Observable o, Object arg) {
+        System.out.println(arg);
     }
     
 }

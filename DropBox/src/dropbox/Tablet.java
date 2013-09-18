@@ -12,13 +12,12 @@ import java.util.Observable;
  */
 public class Tablet extends Dispositivo {
 
-    public Tablet(String caminhoPasta) {
-		super(caminhoPasta);
+    public Tablet(String path) {
+		super(path);
 	}
 
-	public void update(Observable o, Object arg) {
-        
-        
+    public void update(Observable o, Object arg) {
+        System.out.println(arg);
     }
     
 }

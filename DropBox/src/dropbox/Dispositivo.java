@@ -13,12 +13,10 @@ import java.util.Observer;
  */
 public abstract class Dispositivo implements Observer{
     
-    public String nome;
-    public String caminhoPasta;
+    private String nome;
+    private String caminhoPasta;
     
-    public Dispositivo(String caminhoPasta) {
-        
-    }
+    public Dispositivo(String caminhoPasta) {}
     
     
 	public void sincronizaArquivo(String caminho) {
