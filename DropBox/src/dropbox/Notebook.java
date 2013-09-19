@@ -4,8 +4,7 @@
  */
 package dropbox;
 
-import java.io.File;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Observable;
 
 /**
@@ -13,16 +12,19 @@ import java.util.Observable;
  * @author Jefferson
  */
 public class Notebook extends Dispositivo {
-    
-    private ArrayList<File> fileList = new ArrayList<>();
 
-    public Notebook(String path) {
+	public Notebook(String path) {
 		super(path);
 	}
+	
+    public void update(Observable o, Object arg) {
+		System.out.println("Notebook: ");
 
-	public void update(Observable o, Object arg) {
-        System.out.println(arg);
-        fileList = (ArrayList<File>) arg;
-    }
-    
+		try {
+			sincronizaArquivo(arg);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

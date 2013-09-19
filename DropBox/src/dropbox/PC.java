@@ -4,25 +4,27 @@
  */
 package dropbox;
 
-import java.io.File;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Observable;
+
 
 /**
  *
  * @author Jefferson
  */
 public class PC extends Dispositivo {
-    
-    private ArrayList<File> fileList = new ArrayList<>();
 
     public PC(String path) {
 		super(path);
 	}
-
-    public void update(Observable o, Object arg) {
-        System.out.println(arg);
-        fileList = (ArrayList<File>) arg;
-    }
     
+    public void update(Observable o, Object arg) {
+		System.out.println("PC: ");
+
+		try {
+			sincronizaArquivo(arg);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

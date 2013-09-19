@@ -38,7 +38,7 @@ public class Servidor extends Observable {
 		if (file.isDirectory()) {
 			for (File arquivo : file.listFiles()) {
 				System.out.println(arquivo.getName());
-                                newFileList.add(arquivo);
+                newFileList.add(arquivo);
 			}
 			
 			this.path = path;
@@ -50,11 +50,9 @@ public class Servidor extends Observable {
 	
 	private void notificar() {
 		if (hasChanged()) {
-			//notifyObservers(path);
-                    if (oldFileList != newFileList) {
-                        
-                        notifyObservers(newFileList);
-                    }
+            if (oldFileList != newFileList) {
+                notifyObservers(newFileList);
+            }
 		}
 	}
 }

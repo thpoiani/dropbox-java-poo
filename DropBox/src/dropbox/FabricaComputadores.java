@@ -19,9 +19,9 @@ public class FabricaComputadores extends FabricaDispositivos {
     		switch (tipoDisp.toLowerCase()) {
 	    		case "notebook": return new Notebook(path);
 	    		case "pc": return new PC(path);
-	    		default: throw new Exception("A classe " + tipoDisp + " n√£o existe.");
+	    		default: throw new Exception("A classe " + tipoDisp + " n„o existe.");
     		}
     	}
-    	throw new Exception("O caminho " + path + " n√£o √© de uma pasta.");
-    }
+    	throw new Exception("O caminho " + path + " n„o È de uma pasta.");
+    }    
 }

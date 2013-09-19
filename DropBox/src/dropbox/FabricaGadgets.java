@@ -19,9 +19,10 @@ public class FabricaGadgets extends FabricaDispositivos {
 	    	switch (tipoDisp.toLowerCase()) {
 		        case "tablet": return new Tablet(path);
 		        case "smartphone": return new Smartphone(path);
-		        default: throw new Exception("A classe " + tipoDisp + " n√£o existe.");
+		        default: throw new Exception("A classe " + tipoDisp + " n„o existe.");
 		    }
     	}
-    	throw new Exception("O caminho " + path + " n√£o √© de uma pasta.");
-    }    
+    	throw new Exception("O caminho " + path + " n„o È de uma pasta.");
+    }
+    
 }
