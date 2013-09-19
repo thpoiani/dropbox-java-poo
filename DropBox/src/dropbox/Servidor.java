@@ -34,8 +34,16 @@ public class Servidor extends Observable {
 		File file = new File(path);
 		
 		if (file.isDirectory()) {
+			this.path = path;
+			
+			System.out.println(
+					(file.listFiles().length > 0) 
+						? "Iniciar sincronização." 
+						: "Pasta servidor vazia."
+			);
+
 			setChanged();
-			notifyObservers(file.listFiles());			
+			notifyObservers(file.listFiles());
 		}
 	}
 }

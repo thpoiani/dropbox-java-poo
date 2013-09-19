@@ -5,6 +5,8 @@
 package dropbox;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -12,12 +14,12 @@ import java.io.File;
  * @author Jefferson
  */
 public class DropBox {
+	
+	private static Servidor servidor;
 
     public static void main(String[] args) {
-        Servidor servidor = Servidor.getInstance();
+        servidor = Servidor.getInstance();
         
-        // TODO unix directory separator
-        // TODO implementar abstract factory
         Dispositivo tablet = fabricarDispositivo("tablet", "C:/Users/Public/Documents/tablet");
         Dispositivo notebook = fabricarDispositivo("notebook", "C:/Users/Public/Documents/notebook");
         Dispositivo smartphone = fabricarDispositivo("smartphone", "C:/Users/Public/Documents/smartphone");
@@ -28,7 +30,29 @@ public class DropBox {
         servidor.addObserver(smartphone);
         servidor.addObserver(pc);
         
-        servidor.setPath("C:/Users/Public/Documents/servidor");
+        new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				while (true) {
+					System.out.print(getDate() + " - ");
+					servidor.setPath("C:/Users/Public/Documents/servidor");
+					try {
+						Thread.sleep(5000);
+						System.out.println();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+        	
+        }).start();
+        
+    }
+    
+    private static String getDate() {
+    	SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+    	return sdf.format(new Date());
     }
     
     private static Dispositivo fabricarDispositivo(String type, String path) {

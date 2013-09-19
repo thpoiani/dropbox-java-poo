@@ -18,8 +18,6 @@ public class Notebook extends Dispositivo {
 	}
 	
     public void update(Observable o, Object arg) {
-		System.out.println("Notebook: ");
-
 		try {
 			sincronizaArquivo(arg);
 		} catch (IOException e) {

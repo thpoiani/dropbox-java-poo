@@ -7,7 +7,6 @@ package dropbox;
 import java.io.IOException;
 import java.util.Observable;
 
-
 /**
  *
  * @author Jefferson
@@ -19,9 +18,7 @@ public class Tablet extends Dispositivo {
 	}
     
     public void update(Observable o, Object arg) {
-		System.out.println("Tablet: ");
-
-		try {
+    	try {
 			sincronizaArquivo(arg);
 		} catch (IOException e) {
 			e.printStackTrace();

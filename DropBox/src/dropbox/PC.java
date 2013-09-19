@@ -7,7 +7,6 @@ package dropbox;
 import java.io.IOException;
 import java.util.Observable;
 
-
 /**
  *
  * @author Jefferson
@@ -19,8 +18,6 @@ public class PC extends Dispositivo {
 	}
     
     public void update(Observable o, Object arg) {
-		System.out.println("PC: ");
-
 		try {
 			sincronizaArquivo(arg);
 		} catch (IOException e) {

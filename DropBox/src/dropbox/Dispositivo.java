@@ -41,6 +41,7 @@ public abstract class Dispositivo implements Observer{
 		Date now = new Date();
 		
 		for (File arquivo : (File[]) arquivos) {
+			System.out.print(this.getClass().getSimpleName() + ": ");
 			File novoArquivo = atualizarArquivos(arquivo);
 			copyFile(arquivo, novoArquivo);
 		}		
@@ -68,6 +69,16 @@ public abstract class Dispositivo implements Observer{
 	}
 	
 	/**
+	 * Método para retornar o caminho do arquivo, dentro da pasta do device
+	 *  
+	 * @param File arquivo
+	 * @return String
+	 */
+	private String getNovoArquivo(File arquivo) {
+		return caminhoPasta + "/" + arquivo.getName();
+	}
+	
+	/**
 	 * Método para remoção de arquivos antigos da pasta do device.
 	 * <br>
 	 * Caso a data de modificação do arquivo seja menor que a do ciclo de atualização,
@@ -81,21 +92,12 @@ public abstract class Dispositivo implements Observer{
 		for (File file : path.listFiles()) {
 			Date lastModified = new Date(file.lastModified());
 			if (lastModified.compareTo(base) < 0) {
+				System.out.print(this.getClass().getSimpleName() + ": ");
 				System.out.println("O arquivo '" + file.getName() + "' foi removido.");
 				file.delete();
 			}
 		}
-	}
-	
-	/**
-	 * Método para retornar o caminho do arquivo, dentro da pasta do device
-	 *  
-	 * @param File arquivo
-	 * @return String
-	 */
-	private String getNovoArquivo(File arquivo) {
-		return caminhoPasta + "/" + arquivo.getName();
-	}
+	}	
 
 	/**
 	 * Método para copiar arquivos da pasta de origem para a pasta de destino
