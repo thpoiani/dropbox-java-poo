@@ -18,17 +18,17 @@ public class DropBox {
         
         // TODO unix directory separator
         // TODO implementar abstract factory
-        Dispositivo tablet = fabricarDispositivo("tablet", "C:/Users/ThiagoHenrique/Desktop/tablet");
-        Dispositivo notebook = fabricarDispositivo("notebook", "C:/Users/ThiagoHenrique/Desktop/notebook");
-        Dispositivo smartphone = fabricarDispositivo("smartphone", "C:/Users/ThiagoHenrique/Desktop/smartphone");
-        Dispositivo pc = fabricarDispositivo("pc", "C:/Users/ThiagoHenrique/Desktop/pc");
+        Dispositivo tablet = fabricarDispositivo("tablet", "C:/Users/Public/Documents/tablet");
+        Dispositivo notebook = fabricarDispositivo("notebook", "C:/Users/Public/Documents/notebook");
+        Dispositivo smartphone = fabricarDispositivo("smartphone", "C:/Users/Public/Documents/smartphone");
+        Dispositivo pc = fabricarDispositivo("pc", "C:/Users/Public/Documents/Desktop/pc");
         
         servidor.addObserver(tablet);
         servidor.addObserver(notebook);
         servidor.addObserver(smartphone);
         servidor.addObserver(pc);
         
-        servidor.setPath("C:/Users/ThiagoHenrique/Desktop/servidor");
+        servidor.setPath("C:/Users/Public/Documents/servidor");
     }
     
     private static Dispositivo fabricarDispositivo(String type, String path) {
