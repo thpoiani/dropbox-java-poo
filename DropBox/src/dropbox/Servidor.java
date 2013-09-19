@@ -5,7 +5,6 @@
 package dropbox;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Observable;
 
 /**
@@ -16,8 +15,6 @@ public class Servidor extends Observable {
     
     private static Servidor uniServer;
     private String path;
-    private ArrayList<File> oldFileList = new ArrayList<>();
-    private ArrayList<File> newFileList = new ArrayList<>();
 
 	private Servidor() {}
     
@@ -35,24 +32,10 @@ public class Servidor extends Observable {
 
 	public void setPath(String path) {
 		File file = new File(path);
-		if (file.isDirectory()) {
-			for (File arquivo : file.listFiles()) {
-				System.out.println(arquivo.getName());
-                newFileList.add(arquivo);
-			}
-			
-			this.path = path;
-			setChanged();
-		}
 		
-		notificar();
-	}
-	
-	private void notificar() {
-		if (hasChanged()) {
-            if (oldFileList != newFileList) {
-                notifyObservers(newFileList);
-            }
+		if (file.isDirectory()) {
+			setChanged();
+			notifyObservers(file.listFiles());			
 		}
 	}
 }
