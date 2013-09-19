@@ -4,6 +4,7 @@
  */
 package dropbox;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -15,6 +16,7 @@ public abstract class Dispositivo implements Observer{
     
     private String nome;
     private String caminhoPasta;
+    private ArrayList<String> listaArquivos = new ArrayList<>();
     
     public Dispositivo(String caminhoPasta) {}
     
