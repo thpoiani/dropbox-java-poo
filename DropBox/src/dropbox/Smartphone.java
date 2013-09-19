@@ -4,6 +4,8 @@
  */
 package dropbox;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Observable;
 
 /**
@@ -11,6 +13,8 @@ import java.util.Observable;
  * @author Jefferson
  */
 public class Smartphone extends Dispositivo {
+    
+    private ArrayList<File> fileList = new ArrayList<>();
 
     public Smartphone(String path) {
     	super(path);
@@ -18,6 +22,7 @@ public class Smartphone extends Dispositivo {
 
     public void update(Observable o, Object arg) {
         System.out.println(arg);
+        fileList = (ArrayList<File>) arg;
     }
     
     
