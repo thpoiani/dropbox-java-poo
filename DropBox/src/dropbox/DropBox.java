@@ -21,7 +21,7 @@ public class DropBox {
         Dispositivo tablet = fabricarDispositivo("tablet", "C:/Users/Public/Documents/tablet");
         Dispositivo notebook = fabricarDispositivo("notebook", "C:/Users/Public/Documents/notebook");
         Dispositivo smartphone = fabricarDispositivo("smartphone", "C:/Users/Public/Documents/smartphone");
-        Dispositivo pc = fabricarDispositivo("pc", "C:/Users/Public/Documents/Desktop/pc");
+        Dispositivo pc = fabricarDispositivo("pc", "C:/Users/Public/Documents/pc");
         
         servidor.addObserver(tablet);
         servidor.addObserver(notebook);
